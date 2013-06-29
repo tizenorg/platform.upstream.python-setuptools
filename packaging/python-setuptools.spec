@@ -9,7 +9,7 @@ URL:        http://pypi.python.org/pypi/setuptools
 Source0:    http://pypi.python.org/packages/source/s/setuptools/setuptools-%{version}.tar.gz
 Source1:    psfl.txt
 Source2:    zpl.txt
-Source1001: packaging/python-setuptools.manifest 
+Source1001: python-setuptools.manifest 
 BuildRequires:  python-devel
 
 
@@ -62,13 +62,13 @@ chmod +x $RPM_BUILD_ROOT%{python_sitelib}/setuptools/command/easy_install.py
 
 
 %files
-%manifest python-setuptools.manifest
+%manifest %{name}.manifest
 %{python_sitelib}/*
 %exclude %{python_sitelib}/easy_install*
 
 
 %files devel
-%manifest python-setuptools.manifest
+%manifest %{name}.manifest
 %{python_sitelib}/easy_install*
 %{_bindir}/*
 
