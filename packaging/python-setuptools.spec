@@ -43,6 +43,9 @@ requiring setuptools.
 %setup -q -n setuptools-%{version}
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 cp %{SOURCE1001} .
 find -name '*.txt' | xargs chmod -x
 find -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python}|'
