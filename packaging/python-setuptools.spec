@@ -49,7 +49,7 @@ export CFLAGS+=" -fvisibility=hidden"
 cp %{SOURCE1001} .
 find -name '*.txt' | xargs chmod -x
 find -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python}|'
-CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
+CFLAGS="$RPM_OPT_FLAGS -fvisibility=hidden" %{__python} setup.py build
 
 %install
 %{__python} setup.py install -O1 --skip-build \
